@@ -13,13 +13,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 blur-card border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-lg"></div>
-            <span className="text-xl font-bold text-foreground">StarrTix</span>
+            <span className="text-xl font-bold text-white">StarrTix</span>
           </div>
           
           {/* Desktop Navigation */}
@@ -28,7 +28,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200"
+                className="text-white/70 hover:text-white transition-colors duration-200"
               >
                 {item.label}
               </a>
@@ -37,17 +37,17 @@ const Header = () => {
           
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost">
+            <Button variant="ghost" className="text-white hover:bg-white/10">
               Sign In
             </Button>
-            <Button variant="default">
+            <Button variant="hero">
               Get Started
             </Button>
           </div>
           
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -60,22 +60,22 @@ const Header = () => {
         
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-border/50">
+          <div className="md:hidden py-4 space-y-4 border-t border-white/10">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block text-foreground hover:text-primary transition-colors duration-200"
+                className="block text-white/70 hover:text-white transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
             <div className="flex flex-col space-y-2 pt-4">
-              <Button variant="ghost" className="w-full">
+              <Button variant="ghost" className="w-full text-white hover:bg-white/10">
                 Sign In
               </Button>
-              <Button variant="default" className="w-full">
+              <Button variant="hero" className="w-full">
                 Get Started
               </Button>
             </div>
